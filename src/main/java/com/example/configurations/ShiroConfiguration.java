@@ -21,15 +21,16 @@ public class ShiroConfiguration {
         securityManager.setRealm(new MyRealm());
 
         return securityManager;
-                }
+    }
 
-@Bean
-public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
+    @Bean
+    public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
 
         // 拦截器
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
+        filterChainDefinitionMap.put("/ui/**", "anon");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/security/logout", "logout");
 
@@ -38,5 +39,5 @@ public ShiroFilterFactoryBean shirFilter(SecurityManager securityManager) {
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         return shiroFilterFactoryBean;
-        }
-        }
+    }
+}
