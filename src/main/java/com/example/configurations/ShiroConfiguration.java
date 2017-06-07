@@ -16,9 +16,9 @@ import java.util.Map;
 @Configuration
 public class ShiroConfiguration {
     @Bean
-    public SecurityManager securityManager() {
+    public SecurityManager securityManager(MyRealm myRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
-        securityManager.setRealm(new MyRealm());
+        securityManager.setRealm(myRealm);
 
         return securityManager;
     }
@@ -31,6 +31,8 @@ public class ShiroConfiguration {
         // 拦截器
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/ui/**", "anon");
+        filterChainDefinitionMap.put("/druid/**", "anon");
+        filterChainDefinitionMap.put("/home/**", "anon");
         filterChainDefinitionMap.put("/**", "authc");
         filterChainDefinitionMap.put("/security/logout", "logout");
 
