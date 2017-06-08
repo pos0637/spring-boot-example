@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mappers.UserDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.entities.User">
+        <result column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+        <result column="status" property="status"/>
+        <result column="name" property="name"/>
+        <result column="sex" property="sex"/>
+        <result column="age" property="age"/>
+        <result column="birthday" property="birthday"/>
+        <result column="title" property="title"/>
+        <result column="title2" property="title2"/>
+        <result column="title3" property="title3"/>
+        <result column="company" property="company"/>
+        <result column="company2" property="company2"/>
+        <result column="company3" property="company3"/>
+        <result column="business_address" property="businessAddress"/>
+        <result column="business_address2" property="businessAddress2"/>
+        <result column="address" property="address"/>
+        <result column="address2" property="address2"/>
+        <result column="email" property="email"/>
+        <result column="email2" property="email2"/>
+        <result column="email3" property="email3"/>
+        <result column="web" property="web"/>
+        <result column="web2" property="web2"/>
+        <result column="web3" property="web3"/>
+        <result column="mobile" property="mobile"/>
+        <result column="mobile2" property="mobile2"/>
+        <result column="telephone" property="telephone"/>
+        <result column="telephone2" property="telephone2"/>
+        <result column="sns_account" property="snsAccount"/>
+        <result column="sns_account2" property="snsAccount2"/>
+        <result column="sns_account3" property="snsAccount3"/>
+        <result column="country" property="country"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="town" property="town"/>
+        <result column="street" property="street"/>
+        <result column="zip" property="zip"/>
+        <result column="identification" property="identification"/>
+        <result column="identification2" property="identification2"/>
+        <result column="identification3" property="identification3"/>
+        <result column="icon_url" property="iconUrl"/>
+        <result column="picture_url" property="pictureUrl"/>
+        <result column="remark" property="remark"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_modify_user" property="lastModifyUser"/>
+        <result column="last_modify_time" property="lastModifyTime"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `user_name`,
+        `password`,
+        `salt`,
+        `status`,
+        `name`,
+        `sex`,
+        `age`,
+        `birthday`,
+        `title`,
+        `title2`,
+        `title3`,
+        `company`,
+        `company2`,
+        `company3`,
+        `business_address`,
+        `business_address2`,
+        `address`,
+        `address2`,
+        `email`,
+        `email2`,
+        `email3`,
+        `web`,
+        `web2`,
+        `web3`,
+        `mobile`,
+        `mobile2`,
+        `telephone`,
+        `telephone2`,
+        `sns_account`,
+        `sns_account2`,
+        `sns_account3`,
+        `country`,
+        `province`,
+        `city`,
+        `town`,
+        `street`,
+        `zip`,
+        `identification`,
+        `identification2`,
+        `identification3`,
+        `icon_url`,
+        `picture_url`,
+        `remark`,
+        `create_user`,
+        `create_time`,
+        `last_modify_user`,
+        `last_modify_time`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO t_sys_user (
+            `id`,
+            `user_name`,
+            `password`,
+            `salt`,
+            `status`,
+            `name`,
+            `sex`,
+            `age`,
+            `birthday`,
+            `title`,
+            `title2`,
+            `title3`,
+            `company`,
+            `company2`,
+            `company3`,
+            `business_address`,
+            `business_address2`,
+            `address`,
+            `address2`,
+            `email`,
+            `email2`,
+            `email3`,
+            `web`,
+            `web2`,
+            `web3`,
+            `mobile`,
+            `mobile2`,
+            `telephone`,
+            `telephone2`,
+            `sns_account`,
+            `sns_account2`,
+            `sns_account3`,
+            `country`,
+            `province`,
+            `city`,
+            `town`,
+            `street`,
+            `zip`,
+            `identification`,
+            `identification2`,
+            `identification3`,
+            `icon_url`,
+            `picture_url`,
+            `remark`,
+            `create_user`,
+            `create_time`,
+            `last_modify_user`,
+            `last_modify_time`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.userName},
+            #{pojo.password},
+            #{pojo.salt},
+            #{pojo.status},
+            #{pojo.name},
+            #{pojo.sex},
+            #{pojo.age},
+            #{pojo.birthday},
+            #{pojo.title},
+            #{pojo.title2},
+            #{pojo.title3},
+            #{pojo.company},
+            #{pojo.company2},
+            #{pojo.company3},
+            #{pojo.businessAddress},
+            #{pojo.businessAddress2},
+            #{pojo.address},
+            #{pojo.address2},
+            #{pojo.email},
+            #{pojo.email2},
+            #{pojo.email3},
+            #{pojo.web},
+            #{pojo.web2},
+            #{pojo.web3},
+            #{pojo.mobile},
+            #{pojo.mobile2},
+            #{pojo.telephone},
+            #{pojo.telephone2},
+            #{pojo.snsAccount},
+            #{pojo.snsAccount2},
+            #{pojo.snsAccount3},
+            #{pojo.country},
+            #{pojo.province},
+            #{pojo.city},
+            #{pojo.town},
+            #{pojo.street},
+            #{pojo.zip},
+            #{pojo.identification},
+            #{pojo.identification2},
+            #{pojo.identification3},
+            #{pojo.iconUrl},
+            #{pojo.pictureUrl},
+            #{pojo.remark},
+            #{pojo.createUser},
+            #{pojo.createTime},
+            #{pojo.lastModifyUser},
+            #{pojo.lastModifyTime}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO t_sys_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.userName!=null"> `user_name`,</if>
+            <if test="pojo.password!=null"> `password`,</if>
+            <if test="pojo.salt!=null"> `salt`,</if>
+            <if test="pojo.status!=null"> `status`,</if>
+            <if test="pojo.name!=null"> `name`,</if>
+            <if test="pojo.sex!=null"> `sex`,</if>
+            <if test="pojo.age!=null"> `age`,</if>
+            <if test="pojo.birthday!=null"> `birthday`,</if>
+            <if test="pojo.title!=null"> `title`,</if>
+            <if test="pojo.title2!=null"> `title2`,</if>
+            <if test="pojo.title3!=null"> `title3`,</if>
+            <if test="pojo.company!=null"> `company`,</if>
+            <if test="pojo.company2!=null"> `company2`,</if>
+            <if test="pojo.company3!=null"> `company3`,</if>
+            <if test="pojo.businessAddress!=null"> `business_address`,</if>
+            <if test="pojo.businessAddress2!=null"> `business_address2`,</if>
+            <if test="pojo.address!=null"> `address`,</if>
+            <if test="pojo.address2!=null"> `address2`,</if>
+            <if test="pojo.email!=null"> `email`,</if>
+            <if test="pojo.email2!=null"> `email2`,</if>
+            <if test="pojo.email3!=null"> `email3`,</if>
+            <if test="pojo.web!=null"> `web`,</if>
+            <if test="pojo.web2!=null"> `web2`,</if>
+            <if test="pojo.web3!=null"> `web3`,</if>
+            <if test="pojo.mobile!=null"> `mobile`,</if>
+            <if test="pojo.mobile2!=null"> `mobile2`,</if>
+            <if test="pojo.telephone!=null"> `telephone`,</if>
+            <if test="pojo.telephone2!=null"> `telephone2`,</if>
+            <if test="pojo.snsAccount!=null"> `sns_account`,</if>
+            <if test="pojo.snsAccount2!=null"> `sns_account2`,</if>
+            <if test="pojo.snsAccount3!=null"> `sns_account3`,</if>
+            <if test="pojo.country!=null"> `country`,</if>
+            <if test="pojo.province!=null"> `province`,</if>
+            <if test="pojo.city!=null"> `city`,</if>
+            <if test="pojo.town!=null"> `town`,</if>
+            <if test="pojo.street!=null"> `street`,</if>
+            <if test="pojo.zip!=null"> `zip`,</if>
+            <if test="pojo.identification!=null"> `identification`,</if>
+            <if test="pojo.identification2!=null"> `identification2`,</if>
+            <if test="pojo.identification3!=null"> `identification3`,</if>
+            <if test="pojo.iconUrl!=null"> `icon_url`,</if>
+            <if test="pojo.pictureUrl!=null"> `picture_url`,</if>
+            <if test="pojo.remark!=null"> `remark`,</if>
+            <if test="pojo.createUser!=null"> `create_user`,</if>
+            <if test="pojo.createTime!=null"> `create_time`,</if>
+            <if test="pojo.lastModifyUser!=null"> `last_modify_user`,</if>
+            <if test="pojo.lastModifyTime!=null"> `last_modify_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.userName!=null">#{pojo.userName},</if>
+            <if test="pojo.password!=null">#{pojo.password},</if>
+            <if test="pojo.salt!=null">#{pojo.salt},</if>
+            <if test="pojo.status!=null">#{pojo.status},</if>
+            <if test="pojo.name!=null">#{pojo.name},</if>
+            <if test="pojo.sex!=null">#{pojo.sex},</if>
+            <if test="pojo.age!=null">#{pojo.age},</if>
+            <if test="pojo.birthday!=null">#{pojo.birthday},</if>
+            <if test="pojo.title!=null">#{pojo.title},</if>
+            <if test="pojo.title2!=null">#{pojo.title2},</if>
+            <if test="pojo.title3!=null">#{pojo.title3},</if>
+            <if test="pojo.company!=null">#{pojo.company},</if>
+            <if test="pojo.company2!=null">#{pojo.company2},</if>
+            <if test="pojo.company3!=null">#{pojo.company3},</if>
+            <if test="pojo.businessAddress!=null">#{pojo.businessAddress},</if>
+            <if test="pojo.businessAddress2!=null">#{pojo.businessAddress2},</if>
+            <if test="pojo.address!=null">#{pojo.address},</if>
+            <if test="pojo.address2!=null">#{pojo.address2},</if>
+            <if test="pojo.email!=null">#{pojo.email},</if>
+            <if test="pojo.email2!=null">#{pojo.email2},</if>
+            <if test="pojo.email3!=null">#{pojo.email3},</if>
+            <if test="pojo.web!=null">#{pojo.web},</if>
+            <if test="pojo.web2!=null">#{pojo.web2},</if>
+            <if test="pojo.web3!=null">#{pojo.web3},</if>
+            <if test="pojo.mobile!=null">#{pojo.mobile},</if>
+            <if test="pojo.mobile2!=null">#{pojo.mobile2},</if>
+            <if test="pojo.telephone!=null">#{pojo.telephone},</if>
+            <if test="pojo.telephone2!=null">#{pojo.telephone2},</if>
+            <if test="pojo.snsAccount!=null">#{pojo.snsAccount},</if>
+            <if test="pojo.snsAccount2!=null">#{pojo.snsAccount2},</if>
+            <if test="pojo.snsAccount3!=null">#{pojo.snsAccount3},</if>
+            <if test="pojo.country!=null">#{pojo.country},</if>
+            <if test="pojo.province!=null">#{pojo.province},</if>
+            <if test="pojo.city!=null">#{pojo.city},</if>
+            <if test="pojo.town!=null">#{pojo.town},</if>
+            <if test="pojo.street!=null">#{pojo.street},</if>
+            <if test="pojo.zip!=null">#{pojo.zip},</if>
+            <if test="pojo.identification!=null">#{pojo.identification},</if>
+            <if test="pojo.identification2!=null">#{pojo.identification2},</if>
+            <if test="pojo.identification3!=null">#{pojo.identification3},</if>
+            <if test="pojo.iconUrl!=null">#{pojo.iconUrl},</if>
+            <if test="pojo.pictureUrl!=null">#{pojo.pictureUrl},</if>
+            <if test="pojo.remark!=null">#{pojo.remark},</if>
+            <if test="pojo.createUser!=null">#{pojo.createUser},</if>
+            <if test="pojo.createTime!=null">#{pojo.createTime},</if>
+            <if test="pojo.lastModifyUser!=null">#{pojo.lastModifyUser},</if>
+            <if test="pojo.lastModifyTime!=null">#{pojo.lastModifyTime},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO t_sys_user (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.userName},
+            #{pojo.password},
+            #{pojo.salt},
+            #{pojo.status},
+            #{pojo.name},
+            #{pojo.sex},
+            #{pojo.age},
+            #{pojo.birthday},
+            #{pojo.title},
+            #{pojo.title2},
+            #{pojo.title3},
+            #{pojo.company},
+            #{pojo.company2},
+            #{pojo.company3},
+            #{pojo.businessAddress},
+            #{pojo.businessAddress2},
+            #{pojo.address},
+            #{pojo.address2},
+            #{pojo.email},
+            #{pojo.email2},
+            #{pojo.email3},
+            #{pojo.web},
+            #{pojo.web2},
+            #{pojo.web3},
+            #{pojo.mobile},
+            #{pojo.mobile2},
+            #{pojo.telephone},
+            #{pojo.telephone2},
+            #{pojo.snsAccount},
+            #{pojo.snsAccount2},
+            #{pojo.snsAccount3},
+            #{pojo.country},
+            #{pojo.province},
+            #{pojo.city},
+            #{pojo.town},
+            #{pojo.street},
+            #{pojo.zip},
+            #{pojo.identification},
+            #{pojo.identification2},
+            #{pojo.identification3},
+            #{pojo.iconUrl},
+            #{pojo.pictureUrl},
+            #{pojo.remark},
+            #{pojo.createUser},
+            #{pojo.createTime},
+            #{pojo.lastModifyUser},
+            #{pojo.lastModifyTime}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE t_sys_user
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.userName != null"> `user_name` = #{pojo.userName}, </if>
+            <if test="pojo.password != null"> `password` = #{pojo.password}, </if>
+            <if test="pojo.salt != null"> `salt` = #{pojo.salt}, </if>
+            <if test="pojo.status != null"> `status` = #{pojo.status}, </if>
+            <if test="pojo.name != null"> `name` = #{pojo.name}, </if>
+            <if test="pojo.sex != null"> `sex` = #{pojo.sex}, </if>
+            <if test="pojo.age != null"> `age` = #{pojo.age}, </if>
+            <if test="pojo.birthday != null"> `birthday` = #{pojo.birthday}, </if>
+            <if test="pojo.title != null"> `title` = #{pojo.title}, </if>
+            <if test="pojo.title2 != null"> `title2` = #{pojo.title2}, </if>
+            <if test="pojo.title3 != null"> `title3` = #{pojo.title3}, </if>
+            <if test="pojo.company != null"> `company` = #{pojo.company}, </if>
+            <if test="pojo.company2 != null"> `company2` = #{pojo.company2}, </if>
+            <if test="pojo.company3 != null"> `company3` = #{pojo.company3}, </if>
+            <if test="pojo.businessAddress != null"> `business_address` = #{pojo.businessAddress}, </if>
+            <if test="pojo.businessAddress2 != null"> `business_address2` = #{pojo.businessAddress2}, </if>
+            <if test="pojo.address != null"> `address` = #{pojo.address}, </if>
+            <if test="pojo.address2 != null"> `address2` = #{pojo.address2}, </if>
+            <if test="pojo.email != null"> `email` = #{pojo.email}, </if>
+            <if test="pojo.email2 != null"> `email2` = #{pojo.email2}, </if>
+            <if test="pojo.email3 != null"> `email3` = #{pojo.email3}, </if>
+            <if test="pojo.web != null"> `web` = #{pojo.web}, </if>
+            <if test="pojo.web2 != null"> `web2` = #{pojo.web2}, </if>
+            <if test="pojo.web3 != null"> `web3` = #{pojo.web3}, </if>
+            <if test="pojo.mobile != null"> `mobile` = #{pojo.mobile}, </if>
+            <if test="pojo.mobile2 != null"> `mobile2` = #{pojo.mobile2}, </if>
+            <if test="pojo.telephone != null"> `telephone` = #{pojo.telephone}, </if>
+            <if test="pojo.telephone2 != null"> `telephone2` = #{pojo.telephone2}, </if>
+            <if test="pojo.snsAccount != null"> `sns_account` = #{pojo.snsAccount}, </if>
+            <if test="pojo.snsAccount2 != null"> `sns_account2` = #{pojo.snsAccount2}, </if>
+            <if test="pojo.snsAccount3 != null"> `sns_account3` = #{pojo.snsAccount3}, </if>
+            <if test="pojo.country != null"> `country` = #{pojo.country}, </if>
+            <if test="pojo.province != null"> `province` = #{pojo.province}, </if>
+            <if test="pojo.city != null"> `city` = #{pojo.city}, </if>
+            <if test="pojo.town != null"> `town` = #{pojo.town}, </if>
+            <if test="pojo.street != null"> `street` = #{pojo.street}, </if>
+            <if test="pojo.zip != null"> `zip` = #{pojo.zip}, </if>
+            <if test="pojo.identification != null"> `identification` = #{pojo.identification}, </if>
+            <if test="pojo.identification2 != null"> `identification2` = #{pojo.identification2}, </if>
+            <if test="pojo.identification3 != null"> `identification3` = #{pojo.identification3}, </if>
+            <if test="pojo.iconUrl != null"> `icon_url` = #{pojo.iconUrl}, </if>
+            <if test="pojo.pictureUrl != null"> `picture_url` = #{pojo.pictureUrl}, </if>
+            <if test="pojo.remark != null"> `remark` = #{pojo.remark}, </if>
+            <if test="pojo.createUser != null"> `create_user` = #{pojo.createUser}, </if>
+            <if test="pojo.createTime != null"> `create_time` = #{pojo.createTime}, </if>
+            <if test="pojo.lastModifyUser != null"> `last_modify_user` = #{pojo.lastModifyUser}, </if>
+            <if test="pojo.lastModifyTime != null"> `last_modify_time` = #{pojo.lastModifyTime} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated by codehelper on 2017-06-08 15:24:22-->
+    <select id="find" resultMap="AllColumnMap">
+        select
+        <include refid="all_column"/>
+        from t_sys_user
+    </select>
+</mapper>
+

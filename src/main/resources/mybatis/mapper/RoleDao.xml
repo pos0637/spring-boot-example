@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mappers.RoleDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.example.entities.Role">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="status" property="status"/>
+        <result column="remark" property="remark"/>
+        <result column="create_user" property="createUser"/>
+        <result column="create_time" property="createTime"/>
+        <result column="last_modify_user" property="lastModifyUser"/>
+        <result column="last_modify_time" property="lastModifyTime"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `name`,
+        `status`,
+        `remark`,
+        `create_user`,
+        `create_time`,
+        `last_modify_user`,
+        `last_modify_time`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO t_sys_role (
+            `id`,
+            `name`,
+            `status`,
+            `remark`,
+            `create_user`,
+            `create_time`,
+            `last_modify_user`,
+            `last_modify_time`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.status},
+            #{pojo.remark},
+            #{pojo.createUser},
+            #{pojo.createTime},
+            #{pojo.lastModifyUser},
+            #{pojo.lastModifyTime}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.name!=null"> `name`,</if>
+            <if test="pojo.status!=null"> `status`,</if>
+            <if test="pojo.remark!=null"> `remark`,</if>
+            <if test="pojo.createUser!=null"> `create_user`,</if>
+            <if test="pojo.createTime!=null"> `create_time`,</if>
+            <if test="pojo.lastModifyUser!=null"> `last_modify_user`,</if>
+            <if test="pojo.lastModifyTime!=null"> `last_modify_time`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.name!=null">#{pojo.name},</if>
+            <if test="pojo.status!=null">#{pojo.status},</if>
+            <if test="pojo.remark!=null">#{pojo.remark},</if>
+            <if test="pojo.createUser!=null">#{pojo.createUser},</if>
+            <if test="pojo.createTime!=null">#{pojo.createTime},</if>
+            <if test="pojo.lastModifyUser!=null">#{pojo.lastModifyUser},</if>
+            <if test="pojo.lastModifyTime!=null">#{pojo.lastModifyTime},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO t_sys_role (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.status},
+            #{pojo.remark},
+            #{pojo.createUser},
+            #{pojo.createTime},
+            #{pojo.lastModifyUser},
+            #{pojo.lastModifyTime}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE role
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.name != null"> `name` = #{pojo.name}, </if>
+            <if test="pojo.status != null"> `status` = #{pojo.status}, </if>
+            <if test="pojo.remark != null"> `remark` = #{pojo.remark}, </if>
+            <if test="pojo.createUser != null"> `create_user` = #{pojo.createUser}, </if>
+            <if test="pojo.createTime != null"> `create_time` = #{pojo.createTime}, </if>
+            <if test="pojo.lastModifyUser != null"> `last_modify_user` = #{pojo.lastModifyUser}, </if>
+            <if test="pojo.lastModifyTime != null"> `last_modify_time` = #{pojo.lastModifyTime} </if>
+        </set>
+        WHERE id = #{pojo.id}
+    </update>
+</mapper>
+

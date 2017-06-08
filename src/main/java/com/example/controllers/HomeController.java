@@ -1,6 +1,8 @@
 package com.example.controllers;
 
+import com.alibaba.fastjson.JSON;
 import com.example.entities.User;
+import com.example.mappers.UserDao;
 import com.example.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,21 +12,26 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @ResponseBody
 @RequestMapping("/home")
 public class HomeController {
     private final UserRepository mUserRepository;
+    private final UserDao mUserDao;
 
     @Autowired
-    public HomeController(UserRepository userRepository) {
+    public HomeController(UserRepository userRepository, UserDao userDao) {
         mUserRepository = userRepository;
+        mUserDao = userDao;
     }
 
     @RequestMapping("/index")
     public String index() {
-        return "Hello, world!";
+        List<User> list = mUserDao.find();
+
+        return "Hello, world! " + JSON.toJSONString(list);
     }
 
     @RequestMapping("/create")
